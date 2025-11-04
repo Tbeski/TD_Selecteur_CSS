@@ -179,7 +179,7 @@ indice : utiliser les pseudo-classes  :hover sur les h3 des différents blocs
 .year-2020:hover .ref{
     color: #0f4c81;
 }
-.year-2020:hover + div .ref {
+.year-2020+div:hover .ref {
     color: #ff6f61;
 }
 .year-2018:hover .ref {
