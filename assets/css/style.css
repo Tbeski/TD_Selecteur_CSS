@@ -56,26 +56,26 @@ main>div{
 }
 
 /* 6 - Déclarations CSS qui s'appliquent à l'ensemble des éléments html <mark> */
-html mark {
+main div:nth-child(2) mark {
     border-radius: 3px;
     padding: 0 0.25em;
 }
 
 /* 7 - Les déclarations CSS des 4 sélecteurs qui suivent attribuer leur couleurs
    aux mots cyan, magenta, jaune et noir contenus dans des éléments <mark> */
-.cyan{
+mark.cyan{
     background: cyan;
 }
 
-.magenta {
+mark.magenta{
     background: magenta;
 }
 
-.yellow {
+mark.yellow {
     background: yellow;
 }
 
-.black {
+mark.black {
     background: black;
     color: white;
 }
@@ -117,7 +117,7 @@ Styles pantone of the year
 .selecteur .selecteur cible tous les éléments qui sont des enfants d'un autre.
    */
 
-.ref {
+div.pantone-of-the-year-item p.ref {
     font-size: 0.75em;
     font-weight: bold;
     text-align: center;
@@ -130,7 +130,7 @@ Styles pantone of the year
    ici on cible le p qui suit directement le ref et qui est contenu dans la div qui a la classe .pantone-of-the-year-item
    */
 
-.pantone-of-the-year-item .ref+p {
+.pantone-of-the-year-item .ref~p {
     font-size: 0.75em;
     line-height: 1.25em;
     text-align: justify;
@@ -138,25 +138,25 @@ Styles pantone of the year
 
 /* 12 - Déclaration CSS qui donne sa couleur de fond 
    au titre du bloc pantone de l'année 2020 */
-.year-2020 h3 {
+div.pantone-of-the-year-item.year-2020 h3 {
     background: #0f4c81;
 }
 
 /* 13 - Déclaration CSS qui donne sa couleur de fond 
    au titre du bloc pantone de l'année 2019 */
-.year-2020 + div h3{
+div.pantone-of-the-year-item h3{
     background: #ff6f61;
 }
 
 /* 14 - Déclaration CSS qui donne sa couleur de fond 
    au titre du bloc pantone de l'année 2018 */
-.year-2018 h3 {
+div.pantone-of-the-year-item.year-2018 h3 {
     background: #604c8d;
 }
 
 /* 15 - Déclaration CSS qui donne sa couleur de fond 
    au titre du bloc pantone de l'année 2017 */
-.year-2017 h3 {
+div.pantone-of-the-year-item.year-2017 h3 {
     background: #88b04b;
 }
 
@@ -166,7 +166,7 @@ Styles pantone of the year
    ici on cible le h3 lors d'un survol.
    vous pouvez utiliser  :active pour le clic :hover pour le survole
    */
-.year-2016 h3:hover {
+div.pantone-of-the-year-item.year-2016 h3:hover {
     background: rgb(147, 169, 209);
     background: linear-gradient(90deg, rgba(147, 169, 209, 1) 0%, rgba(147, 169, 209, 1) 50%, rgba(247, 202, 202, 1) 50%, rgba(247, 202, 202, 1) 100%);
 }
@@ -176,19 +176,18 @@ Pantone de l'année deviennent de la couleur associée au survol des blocs
 indice : utiliser les pseudo-classes  :hover sur les h3 des différents blocs
 */
 
-.year-2020 .ref:hover {
-    background: #0f4c81;
+.year-2020:hover .ref{
+    color: #0f4c81;
 }
-.year-2020 + div .ref:hover {
-    background: #ff6f61;
+.year-2020:hover + div .ref {
+    color: #ff6f61;
 }
-.year-2018 .ref:hover {
-    background: #604c8d;
+.year-2018:hover .ref {
+    color: #604c8d;
 }
-.year-2017 .ref:hover {
-    background: #88b04b;
+.year-2017:hover .ref {
+    color: #88b04b;
 }
-.year-2016 .ref:hover {
-    background: rgb(147, 169, 209);
-    background: linear-gradient(90deg, rgba(147, 169, 209, 1) 0%, rgba(147, 169, 209, 1) 50%, rgba(247, 202, 202, 1) 50%, rgba(247, 202, 202, 1) 100%);
+.year-2016:hover .ref {
+    color: rgb(147, 169, 209);
 }
